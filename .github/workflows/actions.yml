@@ -1,0 +1,12 @@
+name: Actions Workflow
+
+on:
+  repository_dispatch:
+    types: [edit]
+
+jobs:
+  run-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: playload
+        run: echo ${{ github.event.client_payload.env }}
